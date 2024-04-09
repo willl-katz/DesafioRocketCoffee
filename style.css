@@ -1,0 +1,391 @@
+:root {
+    --backgrond: #000;
+    --text-color: #FFF;
+    --button: #8257E5;
+    --border: #29292E;
+    --border-menu-mobile: #A8A8B3;
+    --text-color-menu-mobile: #E1E1E6;
+}
+
+/* Desktop */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    color: var(--text-color);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+}
+
+body {
+    background-color: var(--backgrond);
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+  
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: var(--button);
+    border: 3px solid var(--backgrond);
+    border-radius: 8px;
+}
+
+/* Menu */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.marca {
+    width: 100%;
+    max-width: fit-content;
+}
+
+.marcaMobile {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+#menu a li {
+    position: relative;
+}
+
+#menu a li:hover:before{
+    content: "";
+    background-color: var(--button);
+    border-radius: 20px;
+    width: 120%;
+    height: 4px;
+    top: 110%;
+    left: -11%;
+    position: absolute;
+    animation: origin 0.1s ease;
+}
+
+@keyframes origin {
+    0% {width: 0%;}
+    25% {width: 25%;}
+    50% {width: 50%;}
+    100% {width: 100%;}
+}
+
+#btnMobile {
+   display: none;
+}
+
+#closeBtnMobile {
+    display: none; 
+ }
+
+.chamada {
+    padding: 11px 38px;
+    border-color: var(--button);
+    border-radius: 6px;
+    background-color: transparent;
+    transition: 0.1s ease-in;
+}
+
+.chamada a {
+    font-weight: 800;
+    font-size: 0.8rem;
+}
+
+.chamada:hover {
+    background-color: var(--button);
+}
+
+.chamadaMobile {
+    display: none;
+}
+
+/* Banner */
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.titulo > h1 {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    font-size: 7rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.efeito{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.efeito .efeito_titulo {
+    display: flex;
+    color: transparent;
+    letter-spacing: -0.03em;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--button);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    overflow: hidden;
+}
+
+span.typed-text {
+    font-size: 7rem;
+    font-weight: normal;
+    color: transparent;
+}
+
+span.cursor {
+    display: inline-flex;
+    background-color: var(--button);
+    margin: 0.2rem;
+    width: 0.3rem;
+    border-radius: 2px;
+    height: 7rem;
+    animation: blink 2s infinite;
+}
+
+span.cursor.typing {
+    animation: none;
+}
+@keyframes blink {
+    0%  { background-color: var(--button); }
+    49% { background-color: var(--button); }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: var(--button); }
+}
+
+.tituloMobile {
+    display: none;
+}
+
+/* Body */
+
+.blur-right {
+    position: fixed;
+    z-index: -1;
+    right: 0;
+    top: -10rem;
+    background-image: url(/assets/blurRight.svg);
+    width: 30rem;
+    height: 40rem;
+}
+
+.blur-left {
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    bottom: -20rem;
+    background-image: url(/assets/blurLeft.svg);
+    margin-left: -32rem;
+    width: 1000px;
+    height: 700px;
+}
+
+.ilustracaoBanner {
+    padding-left: 6rem;
+    padding-top: 2rem;
+}
+
+.blur-bottom {
+    display: none;
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 814px) {
+   
+    /* menu */
+
+    .container {
+        width: 100%;
+        gap: 0;
+        padding-top: 30px;
+    }
+    .marca {
+        display: none;
+    }
+    .marcaMobile {
+        display: block;
+        padding-left: 20px;
+        width: 100%;
+        height: 100%;
+    }
+    .chamada {
+        display: none;
+    }
+    #btnMobile {
+        display: flex;
+        padding-top: 18px;
+        padding-right: 20px;
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
+    #nav {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    #menu{
+        display: none;
+        width: 0%;
+        height: 0%;
+    }
+    #closeBtnMobile {
+        display: none;
+        background-color: transparent;
+        cursor: pointer; 
+        border: none;
+        padding-right: 20px;
+    }
+    #nav.active #menu {
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--backgrond);
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 5rem;
+        right: 0;
+    }
+    #nav.active #closeBtnMobile {
+        display: inline-block;
+    }
+    #nav.active #btnMobile {
+        display: none;
+    }
+    #menu a{
+        border-top: 1px solid var(--border);
+        text-indent: 27px;
+        height: 56px;
+        align-items: center;
+    }
+    #menu a:nth-child(5){
+        border-bottom: 1px solid var(--border);
+    }
+    #menu a li {
+        width: 100%;
+        height: 100%;
+        line-height: 55px;
+        position: relative;
+    }
+    #menu a li:hover:after{
+        content: "";
+        background-color: var(--button);
+        width: 4px;
+        height: 56px;
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+    #menu a li:hover:before {
+        display: none;
+    }
+
+    /* Body */
+
+    .blur-right {
+        display: none;
+    }
+    .blur-left {
+        display: none;
+    }
+
+    /* Banner */
+
+    section {
+        display: flex;
+        gap: 40px;
+    }
+    .titulo h1 {
+        font-size: 50px;
+    }
+    span.typed-text {
+        font-size: 36px;
+    }
+    span.cursor {
+        height: 36px;
+    }
+    .tituloMobile {
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+        width: 100%;
+        max-width: 373px;
+        justify-content: center;
+        align-items: center;
+    }
+    .tituloMobile h1 {
+        font-weight: 600;
+        font-size: 24px;
+        text-align: center;
+        line-height: 41px;
+    }
+    .ilustracaoBanner {
+        width: 100%;
+        padding-left: 3.5rem;
+        min-width: 500px;
+        height: 100%;
+    }
+    .chamadaMobile {
+        display: block;
+        padding: 11px 38px;
+        border-color: var(--button);
+        border-radius: 6px;
+        background-color: transparent;
+        transition: 0.1s ease-in;
+    }
+    .chamadaMobile a {
+        font-weight: 800;
+        font-size: 0.8rem;
+    }
+    
+    .chamadaMobile:hover {
+        background-color: var(--button);
+    }
+
+    .blur-bottom {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        max-width: 100rem;
+        max-height: 40rem;
+        bottom: 0;
+        background-image: url(/assets/Blur.svg);
+    }
+}
